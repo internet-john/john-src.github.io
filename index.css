@@ -1,0 +1,21 @@
+/* #D3D3D3 -- light grey */
+/* #A5FFC9 -- neon mint */
+
+body {
+  background-color: #D3D3D3;
+}
+
+.landing_header {
+  font-family: Oswald;
+  padding-left: 40px;
+}
+
+.landing_header.landing_header-name {
+  font-size: 60px;
+  color: #A5FFC9;
+}
+
+.landing_header.landing_header-subtext {
+  font-size: 24px;
+  color: #A5FFC9;
+}
