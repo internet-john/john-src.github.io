@@ -1,8 +1,5 @@
-/* #D3D3D3 -- light grey */
-/* #A5FFC9 -- neon mint */
-
 body {
-  font-family: Oswald;
+  font-family: 'Raleway', sans-serif;
   letter-spacing: 0.25em;
   background: linear-gradient(
     to right,
@@ -28,11 +25,11 @@ body {
 
 .landing_header {
   padding-left: 40px;
-  font-weight: 800;
 }
 
 .landing_header.landing_header-name {
-  font-size: 80px;
+  font-size: 180px;
+  font-weight: 400;
 }
 
 .landing_header.landing_header-subtext {
@@ -41,7 +38,7 @@ body {
 
 .landing.landing_menu {
   float: right;
-  margin-top: -770px;
-  margin-right: 40px;
+  margin-top: -562.5px;
+  margin-right: 620px;
   font-size: 24px;
 }
