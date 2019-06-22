@@ -28,11 +28,11 @@ body {
 
 .landing_header {
   padding-left: 40px;
-  font-weight: 800;
 }
 
 .landing_header.landing_header-name {
-  font-size: 80px;
+  font-size: 180px;
+  font-weight: 400;
 }
 
 .landing_header.landing_header-subtext {
@@ -41,7 +41,7 @@ body {
 
 .landing.landing_menu {
   float: right;
-  margin-top: -770px;
-  margin-right: 40px;
+  margin-top: -370px;
+  margin-right: 370px;
   font-size: 24px;
 }
