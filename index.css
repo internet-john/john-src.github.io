@@ -2,20 +2,46 @@
 /* #A5FFC9 -- neon mint */
 
 body {
-  background-color: #D3D3D3;
+  font-family: Oswald;
+  letter-spacing: 0.25em;
+  background: linear-gradient(
+    to right,
+    #3FEEE6 0%,
+    #3FEEE6 50%,
+    #FC4445 50%,
+    #FC4445 100%
+  );
+}
+
+.landing.code_portfolio {
+  margin-top: 10%;
+}
+
+.landing.food_portfolio {
+  margin-top: 10%;
+  margin-left: 22.5%
+}
+
+.landing.container {
+  background-color: green;
 }
 
 .landing_header {
-  font-family: Oswald;
   padding-left: 40px;
+  font-weight: 800;
 }
 
 .landing_header.landing_header-name {
-  font-size: 60px;
-  color: #A5FFC9;
+  font-size: 80px;
 }
 
 .landing_header.landing_header-subtext {
+  font-size: 32px;
+}
+
+.landing.landing_menu {
+  float: right;
+  margin-top: -770px;
+  margin-right: 40px;
   font-size: 24px;
-  color: #A5FFC9;
 }
