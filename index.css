@@ -1,8 +1,5 @@
-/* #D3D3D3 -- light grey */
-/* #A5FFC9 -- neon mint */
-
 body {
-  font-family: Oswald;
+  font-family: 'Raleway', sans-serif;
   letter-spacing: 0.25em;
   background: linear-gradient(
     to right,
@@ -11,28 +8,12 @@ body {
     #FC4445 50%,
     #FC4445 100%
   );
-}
-
-.landing.code_portfolio {
-  margin-top: 10%;
-}
-
-.landing.food_portfolio {
-  margin-top: 10%;
-  margin-left: 22.5%
-}
-
-.landing.container {
-  background-color: green;
-}
-
-.landing_header {
-  padding-left: 40px;
+  display: grid;
+  grid-template-columns: 55% 30%;
 }
 
 .landing_header.landing_header-name {
-  font-size: 180px;
-  font-weight: 400;
+  font-size: 120px;
 }
 
 .landing_header.landing_header-subtext {
@@ -40,8 +21,5 @@ body {
 }
 
 .landing.landing_menu {
-  float: right;
-  margin-top: -370px;
-  margin-right: 370px;
-  font-size: 24px;
+  margin-top: 25.5%;
 }
