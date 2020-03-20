@@ -2,19 +2,35 @@
 <html>
   <head>
     <title>John Xavier Holman</title>
+    <link rel="stylesheet" href="./index.css" />
   </head>
-  <body>
-    <h1>hello, <a href="./about.html">i'm john.</a></h1>
-    <h1>
-      <a href="./portfolio.html">portfolio.</a>
-      <a href="https://www.linkedin.com/in/jxholman/" target="_blank"
-        >contact.</a
+  <body class="homepage">
+    <header class="homepage__greeting">
+      <h1 class="homepage__greeting-text">hello, i'm john.</h1>
+    </header>
+    <div class="homepage__content">
+      <a
+        class="homepage__content-about"
+        href="./about.html"
+        rel="noopener noreferrer"
+        ><h1 class="homepage__content-about-text">about.</h1></a
       >
-    </h1>
+      <a
+        class="homepage__content-portfolio"
+        href="./portfolio.html"
+        rel="noopener noreferrer"
+        ><h1 class="homepage__content-portfolio-text">portfolio.</h1></a
+      >
+      <a
+        class="homepage__content-contact"
+        href="https://www.linkedin.com/in/jxholman/"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><h1 class="homepage__content-contact-text">contact.</h1></a
+      >
+    </div>
     <footer class="footer">
-      <p>© 2020 by John Holman; Xavi Labs LLC</p>
+      <p class="footer__text">© 2020 by John Holman; Xavi Labs LLC</p>
     </footer>
   </body>
-
-  <link rel="stylesheet" href="./index.css" />
 </html>
