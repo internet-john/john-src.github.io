@@ -91,3 +91,11 @@ a:hover {
   line-height: 0.5;
   letter-spacing: -0.5rem;
 }
+
+@media screen and (max-width: 520px) {
+  .portfolio__content {
+    font-size: 20em;
+    line-height: 0.8;
+    letter-spacing: -1rem;
+  }
+}
