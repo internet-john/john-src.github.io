@@ -29,7 +29,7 @@ a:hover {
 }
 
 .homepage__greeting {
-  font-size: 6em;
+  font-size: 5em;
   letter-spacing: -0.75rem;
   line-height: 0.75;
 }
@@ -43,14 +43,14 @@ a:hover {
 }
 
 .homepage__content {
-  font-size: 4em;
+  font-size: 3em;
   line-height: 0.2;
   letter-spacing: -0.5rem;
 }
 
 @media screen and (max-width: 520px) {
   .homepage__content {
-    font-size: 8em;
+    font-size: 6em;
     line-height: 0.1;
     letter-spacing: -0.75rem;
   }
@@ -94,7 +94,7 @@ a:hover {
 
 @media screen and (max-width: 520px) {
   .portfolio__content {
-    font-size: 20em;
+    font-size: 4em;
     line-height: 0.8;
     letter-spacing: -1rem;
   }
