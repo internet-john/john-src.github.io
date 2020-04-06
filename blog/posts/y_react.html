@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../../index.css" />
+    <title>Why React by John Holman</title>
+  </head>
+  <body class="blog__post">
+    <div class="blog__post-header">
+    <a class="homepage__link" href="../../index.html" rel="noopener noreferrer"
+      ><h2>Home</h2></a
+    >
+    <p>April 5, 2020</p>
+    </div>
+    <h1>Why React?</h1>
+    <p>
+      An odd question to ask in 2020, as the library has matured and become the
+      choice of individuals, startups, and enterprise alike.
+    </p>
+    <p>
+      <strong>Rly tho.</strong> Why react? What makes it so special, and how did
+      we get here? </p>
+    <p>
+      The intent of this write up is to give the reader
+      insight into React design principles and implementation, 
+      and what makes it so special.
+    </p>
+
+    <h3>A shifted paradigm</h3>
+    <p>
+      A large part of traditional web development followed the MVC paradigm.
+      Manage models, views, controllers. Manage the instances of these
+      controllers, their state, their properties. Update the DOM accordingly.
+      Rinse and repeat. As applications scaled and grew in features and
+      complexity, it became clear that MVC design patterns and the push approach
+      burdered developers with additional cognitive overload.
+    </p>
+    <p>
+      If only there was a library to build interfaces that addressed key pain
+      points of web development...
+    </p>
+    <p>Boy, do I have news for 2013 you!</p>
+    <h3>The Tao of React</h3>
+    <p>
+      As discussed above, their was a number of issues with traditional web
+      development. Let’s discuss these one by one and see how React’s design
+      addresses this.
+    </p>
+    <ul>
+      <li><strong>DOM manipulation</strong></li>
+
+      In React, your UI components, whether they be custom (<LilButton />) or
+      built-in such as div, it’s all good. Your renders will plain JS objects,
+      which properties that describe their type, properties, and children. These
+      objects are not instances. In React, they are all elements.
+
+      <p>
+        <q>
+          <em
+          >An element is a plain object describing a component instance or DOM
+          node and its desired properties.</em></q></p>
+
+      <li><strong>Instance management</strong></li>
+
+      <p>
+        As stated above, your UI components are all elements in React land. When
+        a component updates, the state changes but the instance remains the
+        same. <em>Nice.</em>
+      </p>
+
+      <li><strong>UI updates</strong></li>
+      <p>
+        This is handled by React reconciliation. The algo relies on two key
+        heuristics: 1) Elements of different types produce different trees 2)
+        List items contain a key property that unique, stable, and predictable
+        as the component renders, re-renders, and re-renders again.
+      </p>
+      <p>
+        When a component is updated, it generates a new tree of JS objects. This
+        tree is diffed against the previous one. If the root elements are the
+        same type, it moves on to the attributes and styles, updating as
+        necessary. It will then repeat this for each child node until the tree
+        has been updated where needed. If the root elements are of different
+        type, it will tear down the tree and rebuild anew. This new, updated
+        tree is then passed to the renderer depending on environment. (ReactDOM
+        for web, React-Native for mobile) As we can see, React has taken a lot
+        of the work devs would previously managed.
+        <p>
+        <q>
+          <em
+            >It is a key goal for React that the amount of the user code that
+            executes before yielding back into React is minimal.
+          </em></q
+        ></p>
+      </p>
+    </ul>
+
+    <h3>TL;DR</h3>
+    <p>
+      In summary, React is simply a library fine-tuned for building UI’s. Used
+      properly, it removes a lot of headaches web developers would face in every
+      day development.
+    </p>
+    <footer class="footer">
+      <p class="footer__text">© 2020 by John Holman; Xavi Labs LLC</p>
+    </footer>
+  </body>
+</html>
