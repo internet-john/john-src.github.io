@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../../index.css" />
+    <title>Browser Architecture - In a Nutshell by John Holman</title>
+  </head>
+  <body class="post">
+    <!-- TODO: Make these links and dates a left side nav -->
+    <div class="post__header">
+      <div class="post__header-links">
+        <a
+          class="homepage__link"
+          href="../../index.html"
+          rel="noopener noreferrer"
+          ><h3>Home</h3></a
+        >
+        <a class="homepage__link" href="../index.html" rel="noopener noreferrer"
+          ><h3>Other posts</h3></a
+        >
+      </div>
+      <h3 class="post__header-date">April 7, 2020</h3>
+    </div>
+    <div class="post__body">
+      <h1>Browser Architecture - In a Nutshell</h1>
+      <p>
+        The morning ritual -- fresh coffee brewed, sunk into your plush bean
+        bag, you load up darude.com to enjoy some sweet Sandstorm.
+      </p>
+      <p>
+        Curious how the browser works? Too bad, you've already started reading.
+        I'll make it quick.
+      </p>
+      <p>
+        Browsers are an application that lives on an OS. Applications are
+        composed of <em>n</em> processes. Processes are individual, siloed
+        slices of functionality. They work together through a communication
+        protocol called IPC (Inter-Process Communication). Processes are
+        composed of <em>n</em> threads. Threads work on tasks that contribute to
+        the overall goal of the process. Like...a baby process.
+      </p>
+      <p>
+        Anyways, for example:
+      </p>
+      <p>
+        The renderer process makes use of compositor threads to rasterize
+        individual chunks, aka layer tiles, of the UI. The number of processes
+        and threads is continuously in flux. Some considerations are the user
+        device constraints, network, and the current number of applications
+        already running on OS.
+      </p>
+      <p>
+        Let’s go through a typical user flow:
+      </p>
+      <h3>User search and navigation</h3>
+      <p>
+        You enter ‘darude.com’ to enjoy your daily 8-hour loop of Sandstorm. The
+        browser process will recognize the user has made an input and will
+        determine what exactly it is. Once it has determined this, it will reach
+        out to its network thread that the user wishes to access a website. The
+        network process will then perform its due diligence (DNS lookup, verify
+        certs, establish TLS, etc). If all looks good, it will check back in
+        with the browser process, confirm wish to navigate and browser process
+        will then find a renderer process to render the destination site.
+      </p>
+      <h3>Rendering the page</h3>
+      <p>
+        Once a renderer process is found, it will reach out to the browser
+        process’ network thread for additional info it needs. It will begin
+        construction of the DOM tree from the HTML string it receives, with a
+        preload scanner operating concurrently to reach out to the browser
+        process’ network thread for any additional assets and resources it needs
+        fetched.
+      </p>
+      <p>
+        The renderer process will construct a series of trees to better
+        understand the HTML. It will first calculate a style tree, via
+        user-defined stylesheets and/or browser defaults, then a layout tree,
+        which is a hierarchical construct of what the user will see on the page.
+        It will then record a paint order to know what elements to draw and
+        style first. For example, background, then black rectangle, then orange
+        circle, etc.
+      </p>
+      Now that the renderer process knows the structure, style, and paint order
+      of the page, it will invoke its compositor thread to finish the job. The
+      compositor thread first separates the page into layers, break into tiles,
+      and passes each tile to a raster thread, which essentially takes all the
+      calculated information above(trees and paint records), and turns them into
+      visual pieces of UI.
+      <p>
+        These tiles are then rounded up back into layers, and sent to the
+        browser process, which then sends them to the GPU to display on the
+        screen.
+      </p>
+      <p>
+        Ta-da! And that’s a very high level overview of magic behind browsers.
+        😁
+      </p>
+      <p>Now put some pants on and go be useful.</p>
+    </div>
+    <div class="buffer"></div>
+    <footer class="footer">
+      <p class="footer__text">© 2020 by John Holman; Xavi Labs LLC</p>
+    </footer>
+  </body>
+</html>
