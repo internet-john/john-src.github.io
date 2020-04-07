@@ -159,5 +159,16 @@ a:hover {
 
 .post__content-list {
   list-style: none;
-  padding: 0 7.5%;
+  padding: 0 2%;
+}
+
+@media screen and (max-width: 800px) {
+  .post__content-list {
+    list-style: none;
+    padding: 0 7.5%;
+  }
+}
+
+.buffer {
+  margin: 2% 0;
 }

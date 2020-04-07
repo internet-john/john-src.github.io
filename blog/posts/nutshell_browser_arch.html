@@ -34,31 +34,36 @@
         I'll make it quick.
       </p>
       <p>
-        Browsers are an application that live on an OS. Applications are
-        composed of n processes. Processes are individual, silo’d, slices of
-        functionality. They work together through a communication protocol
-        called IPC (Inter Process Communcation). Processes are composed of n
-        threads. Threads work on tasks that contribute to the overall goal of
-        the process. For example, the renderer process makes use of compositor
-        threads to rasterize individual chunks, aka layer tiles, of the UI. The
-        number of processes and threads is continuously in flux. Some
-        considerations are the user device constraints, network, and current
-        number of applications already running on OS.
+        Browsers are an application that lives on an OS. Applications are
+        composed of <em>n</em> processes. Processes are individual, siloed
+        slices of functionality. They work together through a communication
+        protocol called IPC (Inter-Process Communication). Processes are
+        composed of <em>n</em> threads. Threads work on tasks that contribute to
+        the overall goal of the process. Like...a baby process.
+      </p>
+      <p>
+        Anyways, for example:
+      </p>
+      <p>
+        The renderer process makes use of compositor threads to rasterize
+        individual chunks, aka layer tiles, of the UI. The number of processes
+        and threads is continuously in flux. Some considerations are the user
+        device constraints, network, and the current number of applications
+        already running on OS.
       </p>
       <p>
         Let’s go through a typical user flow:
       </p>
       <h3>User search and navigation</h3>
-
       <p>
-        You enter ‘darude.com’ to enjoy your daily 8 hour loop of Sandstorm. The
-        browser process will recognize the user has made an input, and will
+        You enter ‘darude.com’ to enjoy your daily 8-hour loop of Sandstorm. The
+        browser process will recognize the user has made an input and will
         determine what exactly it is. Once it has determined this, it will reach
-        out to it’s network thread that the user wishes to access a website. The
+        out to its network thread that the user wishes to access a website. The
         network process will then perform its due diligence (DNS lookup, verify
-        certs, establish TLS etc). If all looks good, it will check back in with
-        the browser process, confirm wish to navigate and browser process will
-        then find a renderer process to render the destination site.
+        certs, establish TLS, etc). If all looks good, it will check back in
+        with the browser process, confirm wish to navigate and browser process
+        will then find a renderer process to render the destination site.
       </p>
       <h3>Rendering the page</h3>
       <p>
@@ -82,8 +87,8 @@
       of the page, it will invoke its compositor thread to finish the job. The
       compositor thread first separates the page into layers, break into tiles,
       and passes each tile to a raster thread, which essentially takes all the
-      calculationed information above(trees and paint records), and turns them
-      into visual pieces of UI.
+      calculated information above(trees and paint records), and turns them into
+      visual pieces of UI.
       <p>
         These tiles are then rounded up back into layers, and sent to the
         browser process, which then sends them to the GPU to display on the
@@ -95,6 +100,7 @@
       </p>
       <p>Now put some pants on and go be useful.</p>
     </div>
+    <div class="buffer"></div>
     <footer class="footer">
       <p class="footer__text">© 2020 by John Holman; Xavi Labs LLC</p>
     </footer>
