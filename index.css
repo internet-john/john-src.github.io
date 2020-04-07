@@ -126,12 +126,38 @@ a:hover {
                                                                             */
 
 .blog__posts {
-  font-size: 2em;
-  height: 80vh;
+  font-size: 4em;
+  line-height: 0.8;
+  letter-spacing: -0.25rem;
+  height: 100vh;
 }
 
-.blog__post-header {
+@media screen and (max-width: 800px) {
+  .blog__posts {
+    font-size: 2em;
+    line-height: 0.8;
+    letter-spacing: -0.35rem;
+  }
+}
+
+.post__header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+.post__body {
+  margin: 0 5%;
+  border-bottom: 2px solid black;
+}
+
+@media screen and (max-width: 800px) {
+  .post__body {
+    margin: 0 10%;
+  }
+}
+
+.post__content-list {
+  list-style: none;
+  padding: 0 7.5%;
 }
