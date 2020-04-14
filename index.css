@@ -40,6 +40,12 @@ a:hover {
   height: 100vh;
 }
 
+@media screen and (max-width: 800px) {
+  .homepage {
+    height: initial;
+  }
+}
+
 .homepage__greeting {
   font-size: 5em;
   letter-spacing: -0.75rem;
@@ -77,6 +83,12 @@ a:hover {
 .about {
   display: grid;
   height: 100vh;
+}
+
+@media screen and (max-width: 800px) {
+  .about {
+    height: initial;
+  }
 }
 
 .about__content-header {
@@ -119,6 +131,7 @@ a:hover {
   font-size: 2.75em;
   line-height: 0.8;
   letter-spacing: -0.5rem;
+  margin-top: -7.5vh;
 }
 
 @media screen and (max-width: 800px) {
@@ -148,6 +161,16 @@ a:hover {
   }
 }
 
+.post {
+  background: linear-gradient(45deg, #4bffa5 20%, #fff 80%) no-repeat;
+}
+
+@media screen and (max-width: 800px) {
+  .post {
+    background: linear-gradient(75deg, #4bffa5 20%, #fff 80%) no-repeat;
+  }
+}
+
 .post__header {
   display: flex;
   justify-content: space-between;
@@ -157,6 +180,7 @@ a:hover {
 .post__body {
   margin: 0 5%;
   border-bottom: 2px solid black;
+  font-size: 1.2em;
 }
 
 @media screen and (max-width: 800px) {
