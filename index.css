@@ -8,7 +8,7 @@ html {
 body {
   height: 100%;
   margin: 0 10%;
-  background: linear-gradient(45deg, #4bffa5 20%, #fff 80%) no-repeat;
+  background: linear-gradient(270deg, #4bffa5 50%, #fff 50%) no-repeat;
 }
 
 @media screen and (max-width: 800px) {
@@ -36,27 +36,27 @@ a:hover {
                                                                             */
 
 .homepage {
-  display: grid;
   height: 100vh;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .homepage {
     height: initial;
   }
 }
 
 .homepage__greeting {
-  font-size: 5em;
-  letter-spacing: -0.75rem;
-  line-height: 0.75;
+  font-size: 6em;
+  letter-spacing: -1rem;
+  line-height: 0.7;
+  width: 40vw;
+  height: 75vh;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .homepage__greeting {
-    font-size: 5em;
-    line-height: 0.8;
-    letter-spacing: -0.85rem;
+    font-size: 4em;
+    letter-spacing: -1rem;
     margin-top: -10vh;
   }
 }
@@ -65,14 +65,15 @@ a:hover {
   font-size: 3em;
   line-height: 0.27;
   letter-spacing: -0.5rem;
+  float: right;
+  margin-top: 50vh;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .homepage__content {
-    font-size: 3em;
+    font-size: 1.5em;
     line-height: 0.25;
-    letter-spacing: -0.5rem;
-    margin-top: -12.5vh;
+    letter-spacing: -0.4rem;
   }
 }
 
