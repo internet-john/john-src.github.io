@@ -8,7 +8,7 @@ html {
 body {
   height: 100%;
   margin: 0 10%;
-  background: linear-gradient(227.5deg, #4bffa5 50%, #fff 50%) no-repeat;
+  background: linear-gradient(227.5deg, #4bffa5 50%, #fafbf5 50%) no-repeat;
 }
 
 @media screen and (max-width: 800px) {
@@ -140,6 +140,13 @@ a:hover {
   }
 }
 
+.portfolio__content h5 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5rem;
+  letter-spacing: -0.2rem;
+}
+
 /* 
                                 BLOG STYLES 
                                                                             */
@@ -160,12 +167,12 @@ a:hover {
 }
 
 .post {
-  background: linear-gradient(45deg, #4bffa5 20%, #fff 80%) no-repeat;
+  background: linear-gradient(227.5deg, #4bffa5 50%, #fafbf5 50%) no-repeat;
 }
 
 @media screen and (max-width: 800px) {
   .post {
-    background: linear-gradient(75deg, #4bffa5 20%, #fff 80%) no-repeat;
+    background: linear-gradient(227.5deg, #4bffa5 50%, #fafbf5 50%) no-repeat;
   }
 }
 
@@ -176,9 +183,10 @@ a:hover {
 }
 
 .post__body {
-  margin: 0 5%;
-  border-bottom: 2px solid black;
   font-size: 1.2em;
+  border-radius: 25px;
+  padding: 2%;
+  background-color: rgba(248, 248, 255, 0.5);
 }
 
 @media screen and (max-width: 800px) {
