@@ -125,7 +125,11 @@ a:hover {
 }
 
 .portfolio__content {
+<<<<<<< HEAD
   font-size: 2.25rem;
+=======
+  font-size: 2.25em;
+>>>>>>> 5b34646425a898b47b0b02c7ca082dccbfb743e5
   line-height: 0.9;
   letter-spacing: -0.5rem;
   margin-top: -5vh;
@@ -133,7 +137,11 @@ a:hover {
 
 @media screen and (max-width: 800px) {
   .portfolio__content {
+<<<<<<< HEAD
     font-size: 1.5rem;
+=======
+    font-size: 1.5em;
+>>>>>>> 5b34646425a898b47b0b02c7ca082dccbfb743e5
     line-height: 0.8;
     letter-spacing: -0.3rem;
   }
