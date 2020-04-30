@@ -6,14 +6,13 @@ html {
 }
 
 body {
-  height: 100%;
-  margin: 0 10%;
+  margin: 0 10rem;
   background: linear-gradient(227.5deg, #4bffa5 50%, #fafbf5 50%) no-repeat;
 }
 
 @media screen and (max-width: 800px) {
   body {
-    margin: 0 5%;
+    margin: 0 2rem;
   }
 }
 
@@ -47,28 +46,28 @@ a:hover {
 }
 
 .homepage__greeting {
-  font-size: 5em;
+  font-size: 5rem;
   letter-spacing: -0.75rem;
   line-height: 0.75;
 }
 
 @media screen and (max-width: 800px) {
   .homepage__greeting {
-    font-size: 3em;
+    font-size: 3rem;
     line-height: 0.8;
     letter-spacing: -0.5rem;
   }
 }
 
 .homepage__content {
-  font-size: 3em;
+  font-size: 3rem;
   line-height: 0.27;
   letter-spacing: -0.5rem;
 }
 
 @media screen and (max-width: 800px) {
   .homepage__content {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     line-height: 0.4;
     letter-spacing: -0.2rem;
   }
@@ -90,14 +89,14 @@ a:hover {
 }
 
 .about__content-header {
-  font-size: 5em;
+  font-size: 5rem;
   line-height: 0.75;
   letter-spacing: -0.4rem;
 }
 
 @media screen and (max-width: 800px) {
   .about__content-header {
-    font-size: 3.25em;
+    font-size: 3.25rem;
     line-height: 0.75;
     letter-spacing: -0.25rem;
     margin-top: -0.1vh;
@@ -105,14 +104,14 @@ a:hover {
 }
 
 .about__content-blurb {
-  font-size: 2.25em;
+  font-size: 2.25rem;
   line-height: 0.8;
   letter-spacing: -0.15rem;
 }
 
 @media screen and (max-width: 800px) {
   .about__content-blurb {
-    margin-right: 15%;
+    margin: auto;
   }
 }
 
@@ -126,7 +125,11 @@ a:hover {
 }
 
 .portfolio__content {
+<<<<<<< HEAD
+  font-size: 2.25rem;
+=======
   font-size: 2.25em;
+>>>>>>> 5b34646425a898b47b0b02c7ca082dccbfb743e5
   line-height: 0.9;
   letter-spacing: -0.5rem;
   margin-top: -5vh;
@@ -134,7 +137,11 @@ a:hover {
 
 @media screen and (max-width: 800px) {
   .portfolio__content {
+<<<<<<< HEAD
+    font-size: 1.5rem;
+=======
     font-size: 1.5em;
+>>>>>>> 5b34646425a898b47b0b02c7ca082dccbfb743e5
     line-height: 0.8;
     letter-spacing: -0.3rem;
   }
@@ -152,7 +159,7 @@ a:hover {
                                                                             */
 
 .blog__posts {
-  font-size: 2em;
+  font-size: 2rem;
   line-height: 0.8;
   letter-spacing: -0.25rem;
   height: 100vh;
@@ -160,9 +167,9 @@ a:hover {
 
 @media screen and (max-width: 800px) {
   .blog__posts {
-    font-size: 2em;
-    line-height: 0.8;
-    letter-spacing: -0.35rem;
+    font-size: 1.5rem;
+    line-height: 0.75;
+    letter-spacing: -0.1rem;
   }
 }
 
@@ -173,6 +180,7 @@ a:hover {
 @media screen and (max-width: 800px) {
   .post {
     background: linear-gradient(227.5deg, #4bffa5 50%, #fafbf5 50%) no-repeat;
+    height: 100vh;
   }
 }
 
@@ -183,30 +191,34 @@ a:hover {
 }
 
 .post__body {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   border-radius: 25px;
-  padding: 2%;
+  padding: 0 2rem;
   background-color: rgba(248, 248, 255, 0.5);
 }
 
 @media screen and (max-width: 800px) {
   .post__body {
-    margin: 0 10%;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    height: 80vh;
+    overflow: hidden;
+    overflow-y: scroll;
   }
 }
 
 .post__content-list {
   list-style: none;
-  padding: 0 2%;
+  padding-left: 1rem;
 }
 
 @media screen and (max-width: 800px) {
   .post__content-list {
     list-style: none;
-    padding: 0 7.5%;
+    padding-left: 0 1rem;
   }
 }
 
 .buffer {
-  margin: 2% 0;
+  margin: 1rem;
 }
