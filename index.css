@@ -80,6 +80,7 @@ a:hover {
 .about {
   display: grid;
   height: 100vh;
+  max-width: 50vw;
 }
 
 @media screen and (max-width: 800px) {
@@ -106,7 +107,7 @@ a:hover {
 .about__content-blurb {
   font-size: 2.25rem;
   line-height: 0.8;
-  letter-spacing: -0.15rem;
+  letter-spacing: -0.1rem;
 }
 
 @media screen and (max-width: 800px) {
@@ -125,25 +126,17 @@ a:hover {
 }
 
 .portfolio__content {
-<<<<<<< HEAD
   font-size: 2.25rem;
-=======
-  font-size: 2.25em;
->>>>>>> 5b34646425a898b47b0b02c7ca082dccbfb743e5
   line-height: 0.9;
-  letter-spacing: -0.5rem;
+  letter-spacing: -0.4rem;
   margin-top: -5vh;
 }
 
 @media screen and (max-width: 800px) {
   .portfolio__content {
-<<<<<<< HEAD
     font-size: 1.5rem;
-=======
-    font-size: 1.5em;
->>>>>>> 5b34646425a898b47b0b02c7ca082dccbfb743e5
     line-height: 0.8;
-    letter-spacing: -0.3rem;
+    letter-spacing: -0.15rem;
   }
 }
 
@@ -180,7 +173,7 @@ a:hover {
 @media screen and (max-width: 800px) {
   .post {
     background: linear-gradient(227.5deg, #4bffa5 50%, #fafbf5 50%) no-repeat;
-    height: 100vh;
+    height: 80vh;
   }
 }
 
