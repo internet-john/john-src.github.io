@@ -113,6 +113,7 @@ a:hover {
 @media screen and (max-width: 800px) {
   .about__content-blurb {
     margin: auto;
+    font-size: 1.8rem;
   }
 }
 
@@ -209,6 +210,12 @@ a:hover {
   .post__content-list {
     list-style: none;
     padding-left: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .code--sample {
+    margin-left: -15vw;
   }
 }
 
