@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../../index.css" />
+    <title>CSS Anchors by John Holman</title>
+  </head>
+  <body class="post">
+    <!-- TODO: Make these links and dates a left side nav -->
+    <div class="post__header">
+      <div class="post__header-links">
+        <a
+          class="homepage__link"
+          href="../../index.html"
+          rel="noopener noreferrer"
+          ><h3>Home</h3></a
+        >
+        <a class="homepage__link" href="../index.html" rel="noopener noreferrer"
+          ><h3>Other posts</h3></a
+        >
+      </div>
+      <h3 class="post__header-date">April 22, 2020</h3>
+    </div>
+    <div class="post__body">
+        <h1>CSS Anchors</h1>
+        <p>
+            A simple way to make your CSS far easier to reason about and debug is
+            through the use of anchor styles. To do so, simply apply defaults to the
+            html and body tags. Today, we will focus on a <code>font-size</code> anchor
+        </p>
+        <h3>Anchors away!</h3>
+        
+        <pre class="code--sample">
+        <code>
+        html { 
+            font-size: 100%; 
+        }
+        </code>
+        </pre>
+
+        <p>Nearly every browser will have a default font size of 16px.</p>
+
+        <!-- <code>
+            <h4>body { height: 100vh; width: 100vw; }</h4>
+        </code>
+
+        <p>
+            Body height and width are at your discretion. Point being, you want to
+            have <i>something</i> there.
+        </p> -->
+        <div>
+        <h3>What follows</h3>
+        Now that we have a default font-size and known body dimensions, we can
+        more easily make use of dynamic sizing for our application content. 
+        
+        <h3>REM - "root em"</h3>
+        <p>
+        REM refers to the root element’s font size. Regardless of the nesting of the
+        element you wish to style, where it’s located, etc, anything styled with
+        the REM unit will be in direct calculation of the root element(html). </p>
+        <p>
+        Above, we set the font-size to 100% (16px). Therefore, we can safely
+        reason about font sizing when using REM. 
+        <pre class="code--sample">
+        <code> 
+        btn--cta {
+            font-size: 1.5rem;
+        }
+            
+        __
+
+        1.5rem = (16*1.5) = 24px.
+        </code>
+        </pre>
+        </p>
+        <!-- <h3>%, VH, VW</h3>
+        <p>% Width and Height will be according to the parent element.</p> For example,
+        within our body, we may have a header, list, a few buttons, and a footer.
+        Because we have explicitly set the height and width of our body, we can
+        easily use % to size our elements. 
+        <p>ex)</p>
+        <code><h4>header { height: 20%; width: inherit; }</h4></code>
+        <p>This states that the header height is equal to 20% of the body height,
+        (20 vertical height units). Additionally, if we wish to use the same width
+        of the parent element we will use the inherit directive. </p>
+        <p>As stated above,
+        the height and width of the child element are calculated from the height
+        and width of the parent node. Therefore, things could get a bit messy if
+        you get quite deeply nested. In that case, we can make use of VH & VW</p> -->
+
+        <h5>TL;DR</h5> 
+        <p>Use CSS anchors to have explicit values to refer to better
+        understand size calculations. </p><p>Always, always use dynamic sizing units (%,
+        VH, VW, em, rem). </p><p>Generally, % and VH/VW are used in conjunction. As for
+        EM and REM, once you use one of them, try and stick to it and not mix. REM
+        is my choice, as for the reasons stated above.</p>
+        </div>
+    </div>
+
+    <div class="buffer"></div>
+    <footer class="footer">
+      <h5 class="footer__text">© 2020 by John Holman; Xavi Labs LLC</h5>
+    </footer>
+  </body>
+</html>
