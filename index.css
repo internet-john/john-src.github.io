@@ -54,9 +54,9 @@ a:hover {
 
 @media screen and (max-width: 800px) {
   .homepage__greeting {
-    font-size: 5em;
-    line-height: 0.8;
-    letter-spacing: -0.5rem;
+    font-size: 4em;
+    line-height: 0.75;
+    letter-spacing: -0.6rem;
   }
 }
 
@@ -68,9 +68,9 @@ a:hover {
 
 @media screen and (max-width: 800px) {
   .homepage__content {
-    font-size: 3em;
+    font-size: 2em;
     line-height: 0.25;
-    letter-spacing: -0.5rem;
+    letter-spacing: -0.4rem;
     margin-top: -12.5vh;
   }
 }
@@ -83,12 +83,6 @@ a:hover {
   display: grid;
   height: 100vh;
   max-width: 50vw;
-}
-
-@media screen and (max-width: 800px) {
-  .about {
-    height: initial;
-  }
 }
 
 .about__content-header {
