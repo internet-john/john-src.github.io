@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../../index.css" />
+    <title>Saga to em! by John Holman</title>
+  </head>
+  <body class="post">
+    <div class="post__header">
+        <div class="post__header-links">
+          <a
+            class="homepage__link"
+            href="../../index.html"
+            rel="noopener noreferrer"
+            ><h3>Home</h3></a
+          >
+          <a class="homepage__link" href="../index.html" rel="noopener noreferrer"
+            ><h3>Other posts</h3></a
+          >
+        </div>
+        <h3 class="post__header-date">May 5, 2020</h3>
+      </div>
+      <div class="post__body">
+    <h1>Saga to em!</h1>
+    <p>
+      Redux — kickass state mgmt. Managing async code in redux without
+      middleware - not so kickass.
+    </p>
+
+    <p>
+      However, our app is probably fetching all sorts of cat pics and dank memes
+      to display. This is async. This has side effects. What if the request
+      fails? What if it takes way too damn long? What if we get back different
+      data each time?
+    </p>
+    <p>
+      Lots of problems to account for. This is when we introduce middleware such
+      as redux-thunk. This middleware intercepts the action, and can then choose
+      what to do next. Dispatch more actions to handle the load case, success
+      case, error case, etc.
+    </p>
+    <p>
+      However, We now find ourselves in a nested dispatch hell. Our actions are
+      now impure, and we have some logic within both the reducer and actions.
+      Everything is tightly coupled, and refactoring is a nightmare. Woe is me!
+    </p>
+    <p>
+      In your darkest hour, in the depths of despair, a glimpse of hope emerges.
+      A shining light emerges over the horizon. Birds begin to sing. The scent
+      of lilac drifts in the air.
+    </p>
+    <h3>Introducing: Redux-Saga</h3>
+    <p>
+      Redux-saga is a library that implements the saga design pattern. Simply
+      put, sagas listen for events, perform some logic, and then publish an
+      event. Other sagas can listen to that event and then perform their own
+      logic. It is a commonly used pattern in microservices and distributed
+      systems.
+    </p>
+    We can now subscribe to an event, and move our nested action dispatches into
+    our sagas. Sagas take advantage of generator functions to provide us with a
+    synchronous syntax when dealing with async side effects.
+    <p>
+      Furthermore, because we are using generator functions, we can now add
+      tests with ease. Each iteration of a generator function returns a value,
+      and we can simply read this as we iterate through the function.
+    </p>
+    <p>
+      This means pure actions, pure reducers, and simpler refactor of our state
+      tree into slice reducers if we wish. So fresh, so clean.
+    </p>
+    <h3>TL;DR</h3>
+    <p>
+      Managing side effects can quickly get out of hand. Polluting actions and
+      reducers with logic is no bueno. Use redux-saga to manage these side
+      effects, and keep your redux actions and reducers pure, clean, and
+      testable. Think of it as attaching an event listener to your app to listen
+      for side effects.
+    </p>
+    <div class="buffer"></div>
+    <footer class="footer">
+      <h5 class="footer__text">© 2020 by John Holman; Xavi Labs LLC</h5>
+    </footer>
+  </body>
+</html>
