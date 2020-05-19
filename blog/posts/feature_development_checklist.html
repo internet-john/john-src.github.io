@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../../index.css" />
+    <title>Feature Development Checklist -- Frontend Edition by John Holman</title>
+  </head>
+  <body class="post">
+    <!-- TODO: Make these links and dates a left side nav -->
+    <div class="post__header">
+      <div class="post__header-links">
+        <a
+          class="homepage__link"
+          href="../../index.html"
+          rel="noopener noreferrer"
+          ><h3>Home</h3></a
+        >
+        <a class="homepage__link" href="../index.html" rel="noopener noreferrer"
+          ><h3>Other posts</h3></a
+        >
+      </div>
+      <h3 class="post__header-date">May 9, 2020</h3>
+    </div>
+    <div class="post__body">
+      <h1>Feature Development for Frontend Devs -- Some considerations</h1>
+      <ul>
+        <li>What is the biz objective?</li>
+
+        <li>
+          How does this feature satisfy biz objective? Tech objective always
+          services biz objective. (Consult with product managers, Biz Dev folks)
+        </li>
+
+        <li>
+          Who are the users? What user pain are we addressing? (Here is the time
+          to sync up with design, product managers, customer care reps,
+          customers themselves)
+        </li>
+
+        <li>
+          Are there wireframes? Specs? What is the brand we are communicating?
+          At a scrappy startup, often times, a front end dev is also the
+          designer. Otherwise, reach out to design team for this.
+        </li>
+
+        <li>
+          Where in the product can we find similar interactions and UI? Brand
+          consistency matters.
+        </li>
+
+        <li>
+          What are the explicit interactions of this page? What are the implicit
+          and explicit behavior and outcomes? Where does this fit within rest of
+          product / interaction? It is so, so, so important to be as granular as
+          possible here. It pays hugely to spend a lot of time here fleshing out
+          every little detail. You can do your job with ambiguity, but you can
+          do your job far more effectively with specificity.
+        </li>
+
+        <li>
+          What is the technical scope of the change? Is it purely UI? Will I
+          need to work on the server? Who is my point of contact in which I may
+          depend upon if working in unfamiliar territory.
+        </li>
+
+        <li>
+          What do the wireframes look like translated to UI? What does this UI
+          look like broken down into components? What is the minimal state
+          representation of the UI?
+        </li>
+
+        <li>
+          Are we talking to API’s? How are we handling the loading case? How are
+          we handling caching? How are we managing latency?
+        </li>
+
+        <li>
+          Are we displaying data? How much? If large dataset, do we have a
+          pagination strategy? Is there someone / somewhere else within product
+          I can reference?
+        </li>
+
+        <li>Is this a mobile app or website?</li>
+
+        <li>
+          How are we managing state transitions? UI entropy can quickly get out
+          of hand.
+        </li>
+
+        <li>
+          What is the acceptance criteria? If you carefully detailed the
+          interactions, behavior, and outcomes as stated above, this is your
+          acceptance criteria.
+        </li>
+
+        <li>
+          What is the rollout plan? Beta? Percentage rollout? Phased released?
+          A/B Testing? Do we have tracking and analytics in place? Have we added
+          sufficient test coverage end-to-end? Unit, integration, and UI?
+        </li>
+        <h3>tl;dr</h3>
+        <p>as a dev, your job is to translate thought into code. clear, concise, thoughts = clear, conside, code</p>
+        <p>it's in your best interest to gather the requirements yourself, drill down, get as specific as possible, THEN implement</p>
+      </ul>
+      <div class="buffer"></div>
+      <footer class="footer">
+        <h5 class="footer__text">© 2020 by John Holman; Xavi Labs LLC</h5>
+      </footer>
+    </body>
+  </html>
