@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../../index.css" />
+    <title>Practice makes (perf)ect by John Holman</title>
+  </head>
+  <body class="post">
+    <!-- TODO: Make these links and dates a left side nav -->
+    <div class="post__header">
+      <div class="post__header-links">
+        <a
+          class="homepage__link"
+          href="../../index.html"
+          rel="noopener noreferrer"
+          ><h3>Home</h3></a
+        >
+        <a class="homepage__link" href="../index.html" rel="noopener noreferrer"
+          ><h3>Other posts</h3></a
+        >
+      </div>
+      <h3 class="post__header-date">May 19, 2021</h3>
+    </div>
+    <div class="post__body">
+      <h1>Practice makes (perf)ect</h1>
+      <p>
+        As I return to the tech world, I wanted to brush up on some skills while
+        learning a few shiny new things on the way.
+      </p>
+      <a
+        class="homepage__content-contact"
+        href="https://github.com/internet-john/quacker"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Introducing, quacker.
+      </a>
+      <p>
+        My initial goals -- design a web app of sufficient complexity (Twitter
+        clone), use React Router, webpack, and typescript. While I accomplished
+        this, my main takeaway was tackling performance and gaining a deeper
+        understanding of the elements at play. Some things we're complex, but a
+        lot of this is low-hanging fruit that I hope you can apply in your
+        projects and avoid some head-scratchers.
+      </p>
+      <p>Done!</p>
+      <p>
+        Or was I? I ran my project against Lighthouse and the assessment was not
+        pretty...
+      </p>
+      <img
+        src="../../assets/images/perf_snapshot_before.png"
+        alt="Initial perf metrics"
+        srcset=""
+      />
+      <div>
+        <h3>Know thy config</h3>
+        <p>
+          I attempted to run <code>npm run build</code>to see if I could at
+          least see what my build would look like compressed. However, the
+          command failed! I realized my webpack config was not configured
+          properly! I went on a webpack docs deepdive and pored through each
+          property of the webpack config. I noticed something in my config that
+          was off Within my output, I used the path <code>dist</code> to output
+          my bundle. Within my dev server config, I used the path
+          <code>build</code> to ref the bundle generated. Obviously, this
+          wouldn't work!
+        </p>
+        <p>
+          The fix here was simple: make sure I'm referencing the same directory
+          in both places (I chose <code>dist</code>)
+        </p>
+      </div>
+      <div>
+        <h3>Bundle Busting</h3>
+        <h5>Analysis</h5>
+        <p>
+          I came across a nice tool called <code>webpack-bundle-analyzer</code>.
+          It generates a UI to view your bundle size and opportunities for
+          improvement. One glaring issue in my bundle was a few gargantuan third
+          party libraries, namely <code>react-icons</code>.
+        </p>
+        <img
+          src="../../assets/images/reacticons_before_fix.png"
+          alt="Bundle size prior to fixing react-icons"
+          srcset=""
+        />
+        <p>
+          Obviously, WAY too big. I took all imports, centralized them in a
+          single project file, then converged on a few choice icon libraries. I
+          noticed I eliminated lots of duplicate imports and could avoid a lot
+          of libraries not supporting module-based imports.
+        </p>
+        <p>The result? Bundle size cut in <strong>half!</strong></p>
+        <p></p>
+      </div>
+      <h5>Code splitting</h5>
+      <p>
+        Any app with a smidge of complexity will be using dependencies. What
+        becomes obvious is that your code will, most likely, be changing more
+        often than dependencies. (You may be releasing once a week, while your
+        <code>@types/...</code> packages at far less frequency(if ever)).
+        Therefore, it makes sense to separate your code from your external
+        dependencies.
+      </p>
+      <p>
+        Webpack makes this very easy with the
+        <code>optimization</code> property. Take a look:
+      </p>
+      <code> ... optimization: { splitChunks: { chunks: "all" } }, ... </code>
+      <p>
+        This gives us the ability to break down our single bundle into several.
+      </p>
+      <p>
+        Furthermore, pairing this with content hashes allows the browser to only
+        re-download when a file content changes! The content hash only changes
+        when they content of the data itself does. Referring back to our source
+        vs dependencies...this allows the client to avoid a ton of superfluous
+        network requests.
+      </p>
+      <code> ... filename: "[name].[contenthash].js", ... </code>
+      <p>
+        The result? A cool<strong> 95% reduction</strong> in bundle size on
+        subsequent page loads.
+      </p>
+      <img
+        src="../../assets/images/subsequent_pg_visits.png"
+        alt="Bundle size prior to fixing react-icons"
+        srcset=""
+        style="width: 80vw"
+      />
+      <h3>TL;DR</h3>
+      <p>
+        Syntax errors can be costly! (In my case, using both build and dist in
+        config).
+      </p>
+      <p>
+        Webpack is extremely powerful and provides a ton of functionality.
+        However, it does not come for free.
+      </p>
+      <p>
+        Furthermore, the browser can do a lot to provide an excellent UX, so
+        let's make sure we're leveraging what's available. In this case, adding
+        a content hash to our bundle chunks.
+      </p>
+    </div>
+    <div class="buffer"></div>
+    <footer class="footer">
+      <h5 class="footer__text">© 2021 by John Holman</h5>
+    </footer>
+  </body>
+</html>
